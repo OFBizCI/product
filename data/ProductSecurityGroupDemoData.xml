@@ -20,18 +20,6 @@ under the License.
 
 <entity-engine-xml>
     <!-- Catalog Manager security -->
-    <SecurityPermission description="View operations in the Catalog Manager." permissionId="CATALOG_VIEW"/>
-    <SecurityPermission description="Create operations in the Catalog Manager." permissionId="CATALOG_CREATE"/>
-    <SecurityPermission description="Update operations in the Catalog Manager." permissionId="CATALOG_UPDATE"/>
-    <SecurityPermission description="Delete operations in the Catalog Manager." permissionId="CATALOG_DELETE"/>
-    <SecurityPermission description="ALL operations in the Catalog Manager." permissionId="CATALOG_ADMIN"/>
-    <SecurityPermission description="Limited Create operations in the Catalog Manager." permissionId="CATALOG_ROLE_CREATE"/>
-    <SecurityPermission description="Limited Update operations in the Catalog Manager." permissionId="CATALOG_ROLE_UPDATE"/>
-    <SecurityPermission description="Limited Delete operations in the Catalog Manager." permissionId="CATALOG_ROLE_DELETE"/>
-    <SecurityPermission description="To be able to maintain product prices, promotions, and price rules." permissionId="CATALOG_PRICE_MAINT"/>
-    <SecurityPermission description="Allow create/update of 'View Allow' in the Catalog Manager." permissionId="CATALOG_VIEW_ALLOW"/>
-    <SecurityPermission description="Allow create/update of 'Purchase Allow' in the Catalog Manager." permissionId="CATALOG_PURCHASE_ALLOW"/>
-
     <SecurityGroup description="Limited Catalog Admin group, has limited catalog permissions." groupId="CATALOGADMIN_LTD"/>
     <SecurityGroupPermission groupId="CATALOGADMIN_LTD" permissionId="CATALOG_VIEW"/>
     <SecurityGroupPermission groupId="CATALOGADMIN_LTD" permissionId="CATALOG_ROLE_CREATE"/>
@@ -65,36 +53,17 @@ under the License.
     <SecurityGroupPermission groupId="BIZADMIN" permissionId="CATALOG_ADMIN"/>
     <SecurityGroupPermission groupId="BIZADMIN" permissionId="CATALOG_PRICE_MAINT"/>
 
-    <!-- Facility Manager security -->
-    <SecurityPermission description="View operations in the Facility Manager." permissionId="FACILITY_VIEW"/>
-    <SecurityPermission description="Create operations in the Facility Manager." permissionId="FACILITY_CREATE"/>
-    <SecurityPermission description="Update operations in the Facility Manager." permissionId="FACILITY_UPDATE"/>
-    <SecurityPermission description="Delete operations in the Facility Manager." permissionId="FACILITY_DELETE"/>
-    <SecurityPermission description="ALL operations in the Facility Manager." permissionId="FACILITY_ADMIN"/>
-    <SecurityPermission description="Limited view operations in the Facility Manager." permissionId="FACILITY_ROLE_VIEW"/>
-    <SecurityPermission description="Limited update operations in the Facility Manager." permissionId="FACILITY_ROLE_UPDATE"/>
-    <SecurityGroupPermission groupId="FULLADMIN" permissionId="FACILITY_ADMIN"/>
-    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="FACILITY_CREATE"/>
-    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="FACILITY_DELETE"/>
-    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="FACILITY_UPDATE"/>
-    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="FACILITY_VIEW"/>
-    <SecurityGroupPermission groupId="VIEWADMIN" permissionId="FACILITY_VIEW"/>
-    <SecurityGroupPermission groupId="BIZADMIN" permissionId="FACILITY_ADMIN"/>
-    
     <!-- Image Management security -->
     <SecurityGroup description="Image Management Admin." groupId="IMAGEADMIN"/>
-    <SecurityPermission description="All operations in the Image Management." permissionId="IMAGE_MANAGEMENT_ADMIN"/>
     <SecurityGroupPermission groupId="IMAGEADMIN" permissionId="IMAGE_MANAGEMENT_ADMIN"/>
     <SecurityGroupPermission groupId="IMAGEADMIN" permissionId="IMAGE_MANAGEMENT_APPROVE"/>
     <SecurityGroupPermission groupId="IMAGEADMIN" permissionId="IMAGE_MANAGEMENT_UPLOAD"/>
     <SecurityGroupPermission groupId="FULLADMIN" permissionId="IMAGE_MANAGEMENT_ADMIN"/>
     
     <SecurityGroup description="Image Management Approve" groupId="IMAGEAPPROVE"/>
-    <SecurityPermission description="Approve photos in the Image Management." permissionId="IMAGE_MANAGEMENT_APPROVE"/>
     <SecurityGroupPermission groupId="IMAGEAPPROVE" permissionId="IMAGE_MANAGEMENT_APPROVE"/>
     
     <SecurityGroup description="Image Management Upload." groupId="IMAGEUPLOAD"/>
-    <SecurityPermission description="Upload photos in the Image Management." permissionId="IMAGE_MANAGEMENT_UPLOAD"/>
     <SecurityGroupPermission groupId="IMAGEUPLOAD" permissionId="IMAGE_MANAGEMENT_UPLOAD"/>
     
 </entity-engine-xml>
