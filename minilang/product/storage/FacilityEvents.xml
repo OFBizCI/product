@@ -22,7 +22,7 @@ under the License.
     xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/simple-methods.xsd">
     
     <simple-method method-name="createFacilityContent" short-description="Create Facility Content">
-        <call-simple-method method-name="createGenericContent" xml-resource="component://content/script/org/ofbiz/content/layout/LayoutEvents.xml"/>
+        <call-simple-method method-name="createGenericContent" xml-resource="component://content/minilang/layout/LayoutEvents.xml"/>
         <set field="facilityContext.contentId" from-field="context.contentId"/>        
         <set field="facilityContext.facilityId" from-field="formInput.formInput.facilityId"/>
         <set field="facilityContext.fromDate" from-field="formInput.formInput.fromDate" type="Timestamp"/> 

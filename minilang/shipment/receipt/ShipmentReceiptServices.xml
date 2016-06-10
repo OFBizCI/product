@@ -362,7 +362,7 @@ under the License.
     
     <simple-method method-name="issueOrderItemToShipmentAndReceiveAgainstPO" short-description="Issues order item quantity specified to the shipment, then receives inventory for that item and quantity">
         <set value="Issue OrderItem to Shipment and Receive against PO" field="operationName"/>
-        <call-simple-method method-name="checkCanChangeShipmentStatusPacked" xml-resource="component://product/script/org/ofbiz/shipment/shipment/ShipmentServices.xml"/>
+        <call-simple-method method-name="checkCanChangeShipmentStatusPacked" xml-resource="component://product/minilang/shipment/shipment/ShipmentServices.xml"/>
 
         <!-- get orderItem -->
         <entity-one entity-name="OrderItem" value-field="orderItem" auto-field-map="true"/>
@@ -408,7 +408,7 @@ under the License.
             </if-not-empty>
             <call-service service-name="createOrderShipment" in-map-name="orderShipmentCreate"/>
         <else>
-            <call-simple-method method-name="getTotalIssuedQuantityForOrderItem" xml-resource="component://product/script/org/ofbiz/shipment/issuance/IssuanceServices.xml"/>
+            <call-simple-method method-name="getTotalIssuedQuantityForOrderItem" xml-resource="component://product/minilang/shipment/issuance/IssuanceServices.xml"/>
             <call-simple-method method-name="getReceivedQuantityForOrderItem"/>
             <set field="receivedQuantity" value="${receivedQuantity$bigDecimal + parameters.quantity$bigDecimal}" type="BigDecimal"/>
             <entity-and list="orderShipments" entity-name="OrderShipment">
@@ -432,7 +432,7 @@ under the License.
         </if-empty>
         <!--
             TODO: if we want to record the role of the facility operation we have to re-implement this using ShipmentReceiptRole
-        <call-simple-method method-name="associateIssueRoles" xml-resource="component://product/script/org/ofbiz/shipment/issuance/IssuanceServices.xml"/>
+        <call-simple-method method-name="associateIssueRoles" xml-resource="component://product/minilang/shipment/issuance/IssuanceServices.xml"/>
         -->
 
         <set-service-fields service-name="receiveInventoryProduct" map="parameters" to-map="receiveInventoryProductCtx"/>
@@ -493,7 +493,7 @@ under the License.
         </if-compare-field>
         <if-not-empty field="parameters.shipmentId">
             <if-not-empty field="orderItem.productId">
-                <call-simple-method method-name="getTotalIssuedQuantityForOrderItem" xml-resource="component://product/script/org/ofbiz/shipment/issuance/IssuanceServices.xml"/>
+                <call-simple-method method-name="getTotalIssuedQuantityForOrderItem" xml-resource="component://product/minilang/shipment/issuance/IssuanceServices.xml"/>
                 <if-compare-field field="totalIssuedQuantity" operator="less" to-field="receivedQuantity" type="BigDecimal">
                     <set field="quantityToAdd" value="${receivedQuantity$bigDecimal - totalIssuedQuantity$bigDecimal}" type="BigDecimal"/>
                     <entity-condition entity-name="ShipmentItem" list="shipmentItems">
@@ -520,7 +520,7 @@ under the License.
                     <!--
                         TODO: if we want to record the role of the facility operation we have to re-implement this using ShipmentReceiptRole
                     <set field="itemIssuanceId" from-field="itemIssuance.itemIssuanceId"/>
-                    <call-simple-method method-name="associateIssueRoles" xml-resource="component://product/script/org/ofbiz/shipment/issuance/IssuanceServices.xml"/>
+                    <call-simple-method method-name="associateIssueRoles" xml-resource="component://product/minilang/shipment/issuance/IssuanceServices.xml"/>
                     -->
                 </if-compare-field>
             </if-not-empty>

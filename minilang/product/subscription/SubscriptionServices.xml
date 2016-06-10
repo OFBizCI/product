@@ -96,7 +96,7 @@ under the License.
     <!-- ============== Permission Checking Service ============= -->
     <simple-method method-name="subscriptionPermissionCheck" short-description="Subscription permission checking logic">
         <set field="primaryPermission" value="CATALOG"/>
-        <call-simple-method method-name="genericBasePermissionCheck" xml-resource="component://common/script/org/ofbiz/common/permission/CommonPermissionServices.xml"/>
+        <call-simple-method method-name="genericBasePermissionCheck" xml-resource="component://common/minilang/permission/CommonPermissionServices.xml"/>
         <!-- Backwards compatibility - check for non-existent CATALOG_READ permission -->
         <if>
             <condition>

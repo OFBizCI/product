@@ -24,7 +24,7 @@ under the License.
     <simple-method method-name="applyFeatureToProductFromTypeAndCode" short-description="Apply Feature to Product using Feature Type and ID Code">
         <set field="callingMethodName" value="applyFeatureToProductFromTypeAndCode"/>
         <set field="checkAction" value="CREATE"/>
-        <call-simple-method method-name="checkProductRelatedPermission" xml-resource="component://product/script/org/ofbiz/product/product/ProductServices.xml"/>
+        <call-simple-method method-name="checkProductRelatedPermission" xml-resource="component://product/minilang/product/product/ProductServices.xml"/>
         <check-errors/>
 
         <!-- find the ProductFeatures by type and id code -->
